@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as TestUtils from 'react-dom/test-utils';
-import App from '../src/components/App';
+import App from '../src/containers/App';
 
 it('App is rendered', () => {
     // Render App in the document
     const appElement: App = TestUtils.renderIntoDocument(
-        <App/>
+        <App />
     );
 
     const appNode = ReactDOM.findDOMNode(appElement);
