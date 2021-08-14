@@ -1,10 +1,10 @@
-import TopicList from "./Topics/TopicList";
+import Posts from "./Post/Posts";
 
 const Sider = () => {
   return (
     <div>
       Sider
-      <TopicList />
+      <Posts />
     </div>
   )
 }

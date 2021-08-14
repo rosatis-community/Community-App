@@ -2,7 +2,7 @@ import { styled } from '@material-ui/core/styles';
 import { FC } from 'react';
 import CContainedButton from '../components/commons/CContainedButton';
 import CContainer from '../components/commons/CContainer';
-import Daily from '../components/Sider';
+import Sider from '../components/Sider';
 
 const LandingRoot = styled('div')(({ theme }) => ({
   height: '100%'
@@ -18,7 +18,7 @@ const Landing: FC = () => {
     <LandingRoot>
       <CContainer maxWidth="lg">
         <ContainerContent>
-          <Daily />
+          <Sider />
           <CContainedButton color="neutral">deneme</CContainedButton>
         </ContainerContent>
       </CContainer>
