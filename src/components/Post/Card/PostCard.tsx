@@ -1,20 +1,26 @@
-import { styled } from '@material-ui/core';
+import { Card, styled } from '@material-ui/core';
 import { FC } from "react";
 import { Post } from "../../../types/Post";
 import CTypography from "../../commons/CTypography";
 import VoteSection from '../Card/VoteSection';
+import ActionsSection from './ActionsSection';
 import InfoSection from './InfoSection';
-import OperationSection from './OperationSection';
 
-const CardRoot = styled('div')(({ theme }) => ({
+const CardRoot = styled(Card)(({ theme }) => ({
   display: 'flex',
-  width: 500,
-  backgroundColor: theme.palette.grey[900],
 }));
 
 const PostContent = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
   width: '100%',
+  height: 500
 }));
+
+const PostMedia = styled('div')(({ theme }) => ({
+  height: '100%'
+}));
+
 
 interface PostCardProps {
   post: Post;
@@ -30,7 +36,12 @@ const PostCard: FC<PostCardProps> = ({ post }) => {
         <CTypography>
           {title}
         </CTypography>
-        <OperationSection post={post} />
+        <PostMedia>
+          <CTypography>
+            Content
+          </CTypography>
+        </PostMedia>
+        <ActionsSection post={post} />
       </PostContent>
     </CardRoot>
   )

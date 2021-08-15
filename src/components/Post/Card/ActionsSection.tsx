@@ -1,4 +1,4 @@
-import { styled } from '@material-ui/core';
+import { CardActions, styled } from '@material-ui/core';
 import ModeCommentOutlinedIcon from '@material-ui/icons/ModeCommentOutlined';
 import { FC } from "react";
 import { Post } from "../../../types/Post";
@@ -6,8 +6,8 @@ import { StringUtils } from '../../../utils';
 import CTextButton from '../../commons/CTextButton';
 import CTypography from "../../commons/CTypography";
 
-const OperationSectionRoot = styled('div')(({ theme }) => ({
 
+const ActionsSectionRoot = styled(CardActions)(({ theme }) => ({
 }));
 
 const CommentText = styled(CTypography)(({ theme }) => ({
@@ -21,13 +21,13 @@ interface OperationSectionProps {
 const OperationSection: FC<OperationSectionProps> = ({ post }) => {
   const { numComment } = post
   return (
-    <OperationSectionRoot>
+    <ActionsSectionRoot>
       <CTextButton startIcon={<ModeCommentOutlinedIcon />}>
         <CommentText>
           {StringUtils.maybePluralize(numComment, 'comment')}
         </CommentText>
       </CTextButton>
-    </OperationSectionRoot>
+    </ActionsSectionRoot>
   )
 }
 
