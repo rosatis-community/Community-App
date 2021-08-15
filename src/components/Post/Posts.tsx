@@ -1,22 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { PostsData } from '../../types/Post';
 import CTypography from '../commons/CTypography';
-import Post from './Post';
-
-const GET_POSTS = gql`
-  query getPosts {
-    posts {
-      _id
-      title
-      author
-      authorId
-      upvote
-      downvote
-      score
-      numComment
-    }
-  }
-`;
+import PostCard from './Card/PostCard';
+import { GET_POSTS } from './Queries';
 
 const Posts = () => {
   const { loading, error, data } = useQuery<PostsData>(GET_POSTS);
@@ -27,7 +13,7 @@ const Posts = () => {
   return (
     <div>
       {data.posts && data.posts.map(post => (
-        <Post post={post} />
+        <PostCard key={post._id} post={post} />
       ))}
     </div>
   )

@@ -1,12 +1,16 @@
+import { Community } from "./Community";
+import { User } from "./User";
+
 export interface Post {
   _id: string;
   title: string;
-  author: string;
-  authorId: string;
+  author: User;
   upvote: number;
   downvote: number;
   score: number;
   numComment: number;
+  community: Community;
+  created_at: Date;
 }
 
 export interface PostsData {

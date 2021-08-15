@@ -1,7 +1,8 @@
 import { styled } from '@material-ui/core/styles';
 import { FC } from 'react';
-import CContainedButton from '../components/commons/CContainedButton';
 import CContainer from '../components/commons/CContainer';
+import CGrid from '../components/commons/CGrid';
+import Posts from '../components/Post/Posts';
 import Sider from '../components/Sider';
 
 const LandingRoot = styled('div')(({ theme }) => ({
@@ -16,10 +17,16 @@ const ContainerContent = styled('div')(({ theme }) => ({
 const Landing: FC = () => {
   return (
     <LandingRoot>
-      <CContainer maxWidth="lg">
+      <CContainer maxWidth="md">
         <ContainerContent>
-          <Sider />
-          <CContainedButton color="neutral">deneme</CContainedButton>
+          <CGrid container>
+            <CGrid item xs={6}>
+              <Posts />
+            </CGrid>
+            <CGrid item xs={6}>
+              <Sider />
+            </CGrid>
+          </CGrid>
         </ContainerContent>
       </CContainer>
     </LandingRoot>
