@@ -22,7 +22,7 @@ module.exports = merge(commonConfig, {
       'process.env': {
         API_URL:
           JSON.stringify(process.env.API_URL) ||
-          JSON.stringify('https://upbeat-kalam-906c19.netlify.app'),
+          JSON.stringify('https://rosatis-community-api.herokuapp.com'),
       }
     }),
   ],
