@@ -1,6 +1,7 @@
 // production config
 const { merge } = require("webpack-merge");
 const { resolve } = require("path");
+const webpack = require("webpack");
 
 const commonConfig = require("./common");
 
@@ -13,5 +14,16 @@ module.exports = merge(commonConfig, {
     publicPath: "/",
   },
   devtool: "source-map",
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_URL:
+          JSON.stringify(process.env.API_URL) ||
+          JSON.stringify('https://upbeat-kalam-906c19.netlify.app'),
+      }
+    }),
+  ],
 });

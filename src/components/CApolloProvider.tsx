@@ -4,7 +4,7 @@ import {
 import { FC } from "react";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri: `${process.env.API_URL}/graphql`,
   cache: new InMemoryCache()
 });
 
