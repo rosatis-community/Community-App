@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from '@material-ui/core/styles';
 
 export const darkTheme = createTheme({
   palette: {
@@ -9,7 +9,7 @@ export const darkTheme = createTheme({
   },
 });
 
-declare module "@material-ui/core/styles/createPalette" {
+declare module '@material-ui/core/styles/createPalette' {
   interface Palette {
     neutral: Palette['primary'];
   }

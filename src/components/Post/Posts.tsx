@@ -12,11 +12,10 @@ const Posts = () => {
 
   return (
     <div>
-      {data.posts && data.posts.map(post => (
-        <PostCard key={post._id} post={post} />
-      ))}
+      {data.posts &&
+        data.posts.map((post) => <PostCard key={post._id} post={post} />)}
     </div>
-  )
-}
+  );
+};
 
 export default Posts;

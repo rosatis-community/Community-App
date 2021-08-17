@@ -1,10 +1,8 @@
 import { Typography, TypographyProps } from '@material-ui/core';
 
-interface CTypographyProps extends TypographyProps { }
+type CTypographyProps = TypographyProps;
 
 const CTypography: React.FC<CTypographyProps> = ({ children, ...rest }) => {
-  return (
-    <Typography {...rest}>{children}</Typography>
-  );
-}
+  return <Typography {...rest}>{children}</Typography>;
+};
 export default CTypography;

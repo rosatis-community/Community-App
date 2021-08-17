@@ -1,10 +1,8 @@
 import Paper, { PaperProps } from '@material-ui/core/Paper';
 
-interface CPaperProps extends PaperProps { }
+type CPaperProps = PaperProps;
 
 const CPaper: React.FC<CPaperProps> = ({ children, ...rest }) => {
-  return (
-    <Paper {...rest}>{children}</Paper>
-  );
-}
+  return <Paper {...rest}>{children}</Paper>;
+};
 export default CPaper;

@@ -13,4 +13,4 @@ export const routes = [
   { exact: true, path: Routes.homepage, component: Landing },
   { path: Routes.login, component: Login },
   { component: NotFound },
-]
+];

@@ -10,35 +10,34 @@ import CTypography from './commons/CTypography';
 
 const UserAvatar = styled(CAvatar)(({ theme }) => ({
   width: 24,
-  height: 24
-}))
+  height: 24,
+}));
 
 const LoginLink = styled(Link)(({ theme }) => ({
-  textDecoration: 'none'
-}))
-
+  textDecoration: 'none',
+}));
 
 const Navbar = () => {
   return (
     <CNavbar position="sticky">
       <LoginLink to={Routes.homepage}>
         <CTextButton color="secondary">
-          <CTypography
-            variant="h6"
-            noWrap
-          >
+          <CTypography variant="h6" noWrap>
             Community
           </CTypography>
         </CTextButton>
       </LoginLink>
       <CBox flex="1" />
       <LoginLink to={Routes.login}>
-        <COutlinedButton color="neutral" startIcon={<UserAvatar alt="avatar" />}>
+        <COutlinedButton
+          color="neutral"
+          startIcon={<UserAvatar alt="avatar" />}
+        >
           Login
         </COutlinedButton>
       </LoginLink>
     </CNavbar>
   );
-}
+};
 
 export default Navbar;

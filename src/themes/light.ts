@@ -1,7 +1,7 @@
-import { createTheme } from "@material-ui/core";
+import { createTheme } from '@material-ui/core';
 
 export const lightTheme = createTheme({
   palette: {
-    mode: 'light'
-  }
+    mode: 'light',
+  },
 });

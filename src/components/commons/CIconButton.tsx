@@ -1,10 +1,8 @@
-import { IconButton, IconButtonProps } from "@material-ui/core";
+import { IconButton, IconButtonProps } from '@material-ui/core';
 
-interface CIconButtonProps extends IconButtonProps { }
+type CIconButtonProps = IconButtonProps;
 
 const CIconButton: React.FC<CIconButtonProps> = ({ children, ...rest }) => {
-  return (
-    <IconButton {...rest}>{children}</IconButton>
-  );
-}
+  return <IconButton {...rest}>{children}</IconButton>;
+};
 export default CIconButton;

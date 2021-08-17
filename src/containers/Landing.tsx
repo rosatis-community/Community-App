@@ -7,7 +7,7 @@ import Posts from '../components/Post/Posts';
 import Sider from '../components/Sider';
 
 const LandingRoot = styled('div')(({ theme }) => ({
-  height: '100%'
+  height: '100%',
 }));
 
 const ContainerContent = styled('div')(({ theme }) => ({

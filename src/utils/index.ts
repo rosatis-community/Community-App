@@ -1,6 +1,3 @@
 import * as StringUtils from './string';
 
-export {
-  StringUtils,
-};
-
+export { StringUtils };

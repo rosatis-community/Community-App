@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface EntryProps {
   id: string;
@@ -10,11 +10,7 @@ interface EntryProps {
 }
 
 const Entry: FC<EntryProps> = () => {
-  return (
-    <div>
-      Entry
-    </div>
-  )
-}
+  return <div>Entry</div>;
+};
 
 export default Entry;

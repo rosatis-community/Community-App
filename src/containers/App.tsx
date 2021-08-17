@@ -11,7 +11,7 @@ import ErrorBoundary from './ErrorBoundary';
 
 const routeComponents = routes.map(({ exact, path, component }, key) => (
   <Route exact={exact} path={path} component={component} key={key} />
-))
+));
 
 const App = () => {
   return (
@@ -22,9 +22,7 @@ const App = () => {
           <CApolloProvider>
             <Suspense fallback={<div>Loading...</div>}>
               <Navbar />
-              <Switch>
-                {routeComponents}
-              </Switch>
+              <Switch>{routeComponents}</Switch>
             </Suspense>
           </CApolloProvider>
         </ErrorBoundary>

@@ -1,17 +1,15 @@
 import { CardActions, styled } from '@material-ui/core';
 import ModeCommentOutlinedIcon from '@material-ui/icons/ModeCommentOutlined';
-import { FC } from "react";
-import { Post } from "../../../types/Post";
+import { FC } from 'react';
+import { Post } from '../../../types/Post';
 import { StringUtils } from '../../../utils';
 import CTextButton from '../../commons/CTextButton';
-import CTypography from "../../commons/CTypography";
+import CTypography from '../../commons/CTypography';
 
-
-const ActionsSectionRoot = styled(CardActions)(({ theme }) => ({
-}));
+const ActionsSectionRoot = styled(CardActions)(({ theme }) => ({}));
 
 const CommentText = styled(CTypography)(({ theme }) => ({
-  textTransform: 'capitalize'
+  textTransform: 'capitalize',
 }));
 
 interface OperationSectionProps {
@@ -19,7 +17,7 @@ interface OperationSectionProps {
 }
 
 const OperationSection: FC<OperationSectionProps> = ({ post }) => {
-  const { numComment } = post
+  const { numComment } = post;
   return (
     <ActionsSectionRoot>
       <CTextButton startIcon={<ModeCommentOutlinedIcon />}>
@@ -28,7 +26,7 @@ const OperationSection: FC<OperationSectionProps> = ({ post }) => {
         </CommentText>
       </CTextButton>
     </ActionsSectionRoot>
-  )
-}
+  );
+};
 
 export default OperationSection;
