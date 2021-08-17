@@ -2,6 +2,7 @@ import { styled } from '@material-ui/core/styles';
 import { FC } from 'react';
 import CContainer from '../components/commons/CContainer';
 import CGrid from '../components/commons/CGrid';
+import CreatePost from '../components/Post/CreatePost';
 import Posts from '../components/Post/Posts';
 import Sider from '../components/Sider';
 
@@ -20,8 +21,13 @@ const Landing: FC = () => {
       <CContainer maxWidth="md">
         <ContainerContent>
           <CGrid container>
-            <CGrid item xs={6}>
-              <Posts />
+            <CGrid container item xs={6}>
+              <CGrid item xs={12}>
+                <CreatePost />
+              </CGrid>
+              <CGrid item xs={12}>
+                <Posts />
+              </CGrid>
             </CGrid>
             <CGrid item xs={6}>
               <Sider />
