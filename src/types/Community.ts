@@ -7,5 +7,5 @@ export interface Community {
 }
 
 export interface CommunitiesData {
-  communities: Community[];
+  searchCommunities: Community[];
 }

@@ -7,6 +7,7 @@ import CNavbar from './commons/CNavbar';
 import COutlinedButton from './commons/COutlinedButton';
 import CTextButton from './commons/CTextButton';
 import CTypography from './commons/CTypography';
+import CommunitySearchBar from './Community/Search/CommunitySearchBar';
 
 const UserAvatar = styled(CAvatar)(({ theme }) => ({
   width: 24,
@@ -27,6 +28,8 @@ const Navbar = () => {
           </CTypography>
         </CTextButton>
       </LoginLink>
+      <CBox flex="1" />
+      <CommunitySearchBar />
       <CBox flex="1" />
       <LoginLink to={Routes.login}>
         <COutlinedButton
