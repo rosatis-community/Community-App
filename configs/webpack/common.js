@@ -32,7 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "index.html.ejs", publicPath: '/', favicon: '../../src/assets/img/favicon.svg' }),
+    new HtmlWebpackPlugin({ template: "index.html.ejs", publicPath: '/', favicon: '../../src/assets/img/favicon.ico' }),
   ],
   externals: {
     react: "React",
