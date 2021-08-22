@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { Link as RouterLink } from "react-router-dom";
+import { Routes } from '../../../../router/routes';
 import { Community } from '../../../../types/Community';
 import CListItem from '../../../commons/CListItem';
 import CListItemText from '../../../commons/CListItemText';
@@ -13,10 +15,10 @@ const ListItem: FC<ListItemProps> = ({ community }) => {
   const { name } = community;
 
   return (
-    <CListItem button>
+    <CListItem component={RouterLink} to={`${Routes.communities}/${name}`}>
       <ListItemAvatar community={community} />
       <CListItemText
-        primary={<CTypography variant="body2">{name}</CTypography>}
+        primary={<CTypography variant="body2" color="ButtonFace">{name}</CTypography>}
       />
     </CListItem>
   );

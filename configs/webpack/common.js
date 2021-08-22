@@ -32,7 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "index.html.ejs" }),
+    new HtmlWebpackPlugin({ template: "index.html.ejs", publicPath: '/' }),
   ],
   externals: {
     react: "React",
