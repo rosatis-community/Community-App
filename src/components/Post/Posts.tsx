@@ -13,7 +13,7 @@ const Posts = () => {
   return (
     <div>
       {data.posts &&
-        data.posts.map((post) => <PostCard key={post._id} post={post} />)}
+        data.posts.map((post) => <PostCard key={post._id} post={post} community={post.community} />)}
     </div>
   );
 };

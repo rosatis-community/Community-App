@@ -39,7 +39,6 @@ const Login = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(state);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

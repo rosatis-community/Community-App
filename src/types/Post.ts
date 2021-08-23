@@ -13,6 +13,10 @@ export interface Post {
   created_at: Date;
 }
 
+export interface PostData {
+  post: Post;
+}
+
 export interface PostsData {
   posts: Post[];
 }

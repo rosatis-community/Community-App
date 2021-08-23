@@ -1,12 +1,21 @@
 import { gql } from '@apollo/client';
 
-export const GET_COMMUNITY_INFO = gql`
-  query getCommunity($name: String!) {
-    community(name: $name) {
-      name
+export const GET_POST = gql`
+  query getPost($id: String!) {
+    post(id: $id) {
+      _id
       title
-      communityIcon
-      subscribers      
+      author {
+        _id
+        username
+      }
+      upvote
+      downvote
+      score
+      numComment
+      community {
+        name
+      }
     }
   }
 `;
@@ -24,6 +33,9 @@ export const GET_COMMUNITY_POSTS = gql`
       downvote
       score
       numComment
+      community {
+        name
+      }
     }
   }
 `;

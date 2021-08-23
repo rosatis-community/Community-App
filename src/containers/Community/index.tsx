@@ -25,7 +25,7 @@ const CommunityPage = () => {
         <div>
           {postsLoading ? 'posts loading...' :
             postsData?.communityPosts?.length ? postsData.communityPosts.map(post => (
-              <PostCard key={post._id} post={post} />
+              <PostCard key={post._id} post={post} community={infoData.community} />
             ))
               : null}
         </div>
