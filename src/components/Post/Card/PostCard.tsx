@@ -19,7 +19,7 @@ const VoteSectionWrapper = styled('div')(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
-  padding: theme.spacing(0.5)
+  padding: theme.spacing(0.5),
 }));
 
 const PostContent = styled('div')(({ theme }) => ({

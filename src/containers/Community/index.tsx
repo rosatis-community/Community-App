@@ -40,24 +40,21 @@ const CommunityPage = () => {
           {infoLoading
             ? 'info loading...'
             : infoData && (
-              <BannerWrapper>
-                <Banner community={infoData.community} />
-              </BannerWrapper>
-            )}
+                <BannerWrapper>
+                  <Banner community={infoData.community} />
+                </BannerWrapper>
+              )}
         </div>
         <div>
           {postsLoading
             ? 'posts loading...'
             : postsData?.communityPosts?.length
-              ? postsData.communityPosts.map((post) => (
+            ? postsData.communityPosts.map((post) => (
                 <PostCardWrapper key={post._id}>
-                  <PostCard
-                    post={post}
-                    community={infoData.community}
-                  />
+                  <PostCard post={post} community={infoData.community} />
                 </PostCardWrapper>
               ))
-              : null}
+            : null}
         </div>
       </CContainer>
     </div>
