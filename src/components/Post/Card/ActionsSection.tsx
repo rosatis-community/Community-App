@@ -14,19 +14,30 @@ const CommentText = styled(CTypography)(({ theme }) => ({
 
 interface OperationSectionProps {
   post: Post;
+  disableCommentAction?: boolean;
 }
 
-const OperationSection: FC<OperationSectionProps> = ({ post }) => {
+const OperationSection: FC<OperationSectionProps> = ({
+  post,
+  disableCommentAction,
+}) => {
   const { numComment } = post;
   return (
     <ActionsSectionRoot>
-      <CTextButton startIcon={<ModeCommentOutlinedIcon />}>
+      <CTextButton
+        startIcon={<ModeCommentOutlinedIcon />}
+        disabled={disableCommentAction}
+      >
         <CommentText>
           {StringUtils.maybePluralize(numComment, 'comment')}
         </CommentText>
       </CTextButton>
     </ActionsSectionRoot>
   );
+};
+
+OperationSection.defaultProps = {
+  disableCommentAction: false,
 };
 
 export default OperationSection;

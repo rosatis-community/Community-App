@@ -6,7 +6,7 @@ import { Post } from '../../../types/Post';
 import CIconButton from '../../commons/CIconButton';
 import CTypography from '../../commons/CTypography';
 
-const VoteSectionRoot = styled('div')(({ theme }) => ({
+const VoteSectionRoot = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -20,13 +20,13 @@ const VoteSection: FC<VoteSectionProps> = ({ post }) => {
   const { score } = post;
   return (
     <VoteSectionRoot>
-      <CIconButton>
+      <CIconButton size="small">
         <ArrowUpwardIcon />
       </CIconButton>
       <div>
         <CTypography>{score}</CTypography>
       </div>
-      <CIconButton>
+      <CIconButton size="small">
         <ArrowDownwardIcon />
       </CIconButton>
     </VoteSectionRoot>

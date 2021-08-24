@@ -15,6 +15,7 @@ export const GET_POST = gql`
       numComment
       community {
         name
+        communityIcon
       }
     }
   }

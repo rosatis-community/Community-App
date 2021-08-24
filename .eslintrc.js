@@ -22,6 +22,8 @@ module.exports = {
     },
     // Fine tune rules
     rules: {
-        "@typescript-eslint/no-var-requires": 0
+        "@typescript-eslint/no-var-requires": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off"
     },
 };

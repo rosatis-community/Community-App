@@ -18,7 +18,7 @@ const CommunityAvatar = styled(CAvatar)(({ theme }) => ({
 
 const CommunityName = styled(CTypography)(({ theme }) => ({
   marginRight: theme.spacing(1),
-  color: theme.palette.text.secondary
+  color: theme.palette.text.secondary,
 }));
 
 interface InfoSectionProps {
@@ -32,13 +32,15 @@ const InfoSection: FC<InfoSectionProps> = ({ post }) => {
 
   return (
     <InfoSectionRoot>
-      {community && (
+      {community && community.name && (
         <>
           <CommunityAvatar alt={community.name} src={community.communityIcon} />
-          <Link component={RouterLink} to={`${Routes.communities}/${community.name}`} underline="hover">
-            <CommunityName>
-              {community.name}
-            </CommunityName>
+          <Link
+            component={RouterLink}
+            to={`${Routes.communities}/${community.name}`}
+            underline="hover"
+          >
+            <CommunityName>{community.name}</CommunityName>
           </Link>
         </>
       )}
@@ -48,7 +50,7 @@ const InfoSection: FC<InfoSectionProps> = ({ post }) => {
         </Link>
       </CTypography>
       <CTypography>{created_at}</CTypography>
-    </InfoSectionRoot >
+    </InfoSectionRoot>
   );
 };
 

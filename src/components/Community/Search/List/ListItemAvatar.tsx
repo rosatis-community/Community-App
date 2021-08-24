@@ -10,8 +10,8 @@ interface ListItemAvatarProps {
 
 const AvatarWrapper = styled(CListItemAvatar)(() => ({
   '&.MuiListItemAvatar-root': {
-    minWidth: 32
-  }
+    minWidth: 32,
+  },
 }));
 
 const CommunityAvatar = styled(CAvatar)(() => ({

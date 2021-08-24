@@ -16,7 +16,7 @@ export enum Routes {
 export const routes = [
   { exact: true, path: Routes.homepage, component: Landing },
   { path: Routes.login, component: Login },
-  { exact: true, path: `${Routes.communities}/:name`, component: Community },
+  { exact: true, path: `/communities/:name`, component: Community },
   { path: `/communities/:name/posts/:id`, component: Post },
   { component: NotFound },
 ];

@@ -17,10 +17,12 @@ const CommunitySearchBar = () => {
 
   const onCompleted = (data: CommunitiesData) => {
     setAnchorEl(searchBarRef.current);
-  }
+  };
 
-  const [lazyQuery, { loading, error, data }] =
-    useLazyQuery<CommunitiesData>(SEARCH_COMMUNITIES, { onCompleted });
+  const [lazyQuery, { loading, error, data }] = useLazyQuery<CommunitiesData>(
+    SEARCH_COMMUNITIES,
+    { onCompleted },
+  );
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTerm(event.target.value);
@@ -28,7 +30,7 @@ const CommunitySearchBar = () => {
 
   const closePopper = () => {
     setAnchorEl(null);
-  }
+  };
 
   useEffect(() => {
     if (debouncedValue) {
@@ -39,14 +41,19 @@ const CommunitySearchBar = () => {
   useEffect(() => {
     setTerm('');
     closePopper();
-  }, [location])
+  }, [location]);
 
   return (
     <div>
       <div ref={searchBarRef}>
         <CSearchBar term={term} handleInputChange={handleInputChange} />
       </div>
-      <SearchPopper open={Boolean(anchorEl)} anchorEl={anchorEl} onClickAway={closePopper} placement="bottom-start">
+      <SearchPopper
+        open={Boolean(anchorEl)}
+        anchorEl={anchorEl}
+        onClickAway={closePopper}
+        placement="bottom-start"
+      >
         {data && <SearchList communities={data.searchCommunities} />}
       </SearchPopper>
     </div>

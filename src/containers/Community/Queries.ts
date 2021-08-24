@@ -6,7 +6,7 @@ export const GET_COMMUNITY_INFO = gql`
       name
       title
       communityIcon
-      subscribers      
+      subscribers
     }
   }
 `;

@@ -9,20 +9,26 @@ interface BannerProps {
   community: Community;
 }
 
-const BannerWrapper = styled('div')(({ theme }) => ({
+const BannerRoot = styled('div')(({ theme }) => ({
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+}));
+
+const CommunityLogo = styled(CAvatar)(({ theme }) => ({
+  marginRight: theme.spacing(2),
 }));
 
 const Banner: FC<BannerProps> = ({ community }) => {
   const { name, title, subscribers, communityIcon } = community;
 
   return (
-    <BannerWrapper>
-      <CAvatar src={communityIcon} alt={name} />
+    <BannerRoot>
+      <CommunityLogo src={communityIcon} alt={name} />
       <CTypography variant="h5">{title ?? name}</CTypography>
-      <CTypography variant="h5">{maybePluralize(subscribers, 'subscriber')}</CTypography>
-    </BannerWrapper>
+      <CTypography variant="h5" color="GrayText">
+        {maybePluralize(subscribers, 'subscriber')}
+      </CTypography>
+    </BannerRoot>
   );
 };
 

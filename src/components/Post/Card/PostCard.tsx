@@ -10,7 +10,16 @@ import InfoSection from './InfoSection';
 
 const CardRoot = styled(Card)(({ theme }) => ({
   display: 'flex',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  position: 'relative',
+  paddingLeft: theme.spacing(6),
+}));
+
+const VoteSectionWrapper = styled('div')(({ theme }) => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  padding: theme.spacing(0.5)
 }));
 
 const PostContent = styled('div')(({ theme }) => ({
@@ -18,6 +27,12 @@ const PostContent = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   width: '100%',
   height: 500,
+  paddingTop: theme.spacing(1),
+  position: 'relative',
+}));
+
+const InfoSectionWrapper = styled('div')(({ theme }) => ({
+  marginBottom: theme.spacing(1),
 }));
 
 const PostMedia = styled('div')(({ theme }) => ({
@@ -27,29 +42,50 @@ const PostMedia = styled('div')(({ theme }) => ({
 interface PostCardProps {
   post: Post;
   community: Community;
+  disableRouting?: boolean;
+  disableCommentAction?: boolean;
 }
 
-const PostCard: FC<PostCardProps> = ({ post, community }) => {
+const PostCard: FC<PostCardProps> = ({
+  post,
+  community,
+  disableRouting,
+  disableCommentAction,
+}) => {
   const { _id, title } = post;
   const history = useHistory();
 
   const handleRouting = (post: Post) => {
-    history.push(`/communities/${community.name}/posts/${post._id}`);
-  }
+    if (!disableRouting) {
+      history.push(`/communities/${community.name}/posts/${post._id}`);
+    }
+  };
 
   return (
     <CardRoot onClick={() => handleRouting(post)}>
-      <VoteSection post={post} />
+      <VoteSectionWrapper>
+        <VoteSection post={post} />
+      </VoteSectionWrapper>
       <PostContent>
-        <InfoSection post={post} />
+        <InfoSectionWrapper>
+          <InfoSection post={post} />
+        </InfoSectionWrapper>
         <CTypography>{title}</CTypography>
         <PostMedia>
           <CTypography>Content</CTypography>
         </PostMedia>
-        <ActionsSection post={post} />
+        <ActionsSection
+          post={post}
+          disableCommentAction={disableCommentAction}
+        />
       </PostContent>
     </CardRoot>
   );
+};
+
+PostCard.defaultProps = {
+  disableRouting: false,
+  disableCommentAction: false,
 };
 
 export default PostCard;

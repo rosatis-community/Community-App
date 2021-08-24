@@ -10,33 +10,34 @@ interface SearchPopperProps extends CPopperProps {
 const SearchPopper: FC<SearchPopperProps> = (props) => {
   const { children, onClickAway, ...rest } = props;
 
-  const modifiers = useMemo(() => [
-    {
-      name: "sameWidth",
-      enabled: true,
-      fn: ({ state }) => {
-        state.styles.popper.width = `${state.rects.reference.width}px`;
+  const modifiers = useMemo(
+    () => [
+      {
+        name: 'sameWidth',
+        enabled: true,
+        fn: ({ state }) => {
+          state.styles.popper.width = `${state.rects.reference.width}px`;
+        },
+        phase: 'beforeWrite',
+        requires: ['computeStyles'],
       },
-      phase: "beforeWrite",
-      requires: ["computeStyles"],
-    }
-  ], []);
+    ],
+    [],
+  );
 
   return (
     <ClickAwayListener onClickAway={onClickAway}>
       <div>
         <CPopper {...rest} popperOptions={{ modifiers }}>
-          <CPaper>
-            {children}
-          </CPaper>
+          <CPaper>{children}</CPaper>
         </CPopper>
       </div>
-    </ClickAwayListener >
+    </ClickAwayListener>
   );
 };
 
 SearchPopper.defaultProps = {
-  open: false
-}
+  open: false,
+};
 
 export default SearchPopper;
